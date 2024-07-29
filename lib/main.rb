@@ -1,6 +1,5 @@
 
 class Knight
-
   attr_reader :position
   def initialize(x, y)
     @position = [x, y]
@@ -31,6 +30,7 @@ class Knight
     moves
   end
 end
+
 class ChessPathFinder
   def initialize(knight)
     @knight = knight
@@ -116,6 +116,7 @@ class ChessPathFinder
     path
   end
 end
+
 class SearchNode
   attr_reader :position, :parent, :depth
 
@@ -124,6 +125,7 @@ class SearchNode
     @parent = parent
     @depth = parent ? parent.depth + 1 : 0
   end
+  
   def to_s
     "Node(pos: #{@position}, depth: #{depth})"
   end
@@ -141,6 +143,6 @@ end
 
 knight = Knight.new(0, 0)
 pathfinder = ChessPathFinder.new(knight)
-shortest_path = pathfinder.find_shortest_path([3, 3], [6, 0])
+shortest_path = pathfinder.find_shorgitest_path([3, 3], [6, 0])
 puts "Shortest path: #{shortest_path.inspect}"
 
